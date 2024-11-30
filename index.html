@@ -641,6 +641,109 @@
         }
     </style>
     <script charset="utf-8" src="https://platform.twitter.com/js/timeline.16b53cc33aaa562f8f41a495bf720289.js"></script>
+
+    <!-- Improved chatbot styling -->
+    <style>
+        df-messenger {
+            --df-messenger-bot-message: #052963;
+            --df-messenger-button-titlebar-color: #1a6bb6;
+            --df-messenger-chat-background-color: #fafafa;
+            --df-messenger-font-color: white;
+            --df-messenger-send-icon: #1a6bb6;
+            --df-messenger-user-message: #479def;
+            z-index: 999;
+        }
+
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1a6bb6;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .chat-button:hover {
+            background-color: #052963;
+            transform: scale(1.05);
+        }
+
+        /* Accessibility improvements */
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            width: 1px;
+            height: 1px;
+            top: auto;
+        }
+
+        .skip-link:focus {
+            display: inline-block;
+            height: auto;
+            width: auto;
+            position: static;
+            padding: 20px;
+            margin: auto;
+        }
+    </style>
+
+    <!-- Add this in the head section with other styles -->
+    <style>
+        /* Voice input styling */
+        .voice-input-button {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: #1a6bb6;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .voice-input-button:hover {
+            background-color: #052963;
+            transform: scale(1.05);
+        }
+
+        .voice-input-button.recording {
+            background-color: #ff4444;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .voice-input-tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            bottom: 60px;
+            display: none;
+        }
+
+        .voice-input-button:hover .voice-input-tooltip {
+            display: block;
+        }
+    </style>
 </head>
 
 <body
@@ -972,14 +1075,14 @@
                                         tabindex="-1">Administrative Setup</a></li>
                                 <li id="menu-item-196"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196 has-sub-child">
-                                    <a href="https://doj.gov.in/whos-who/" tabindex="-1">Who’s Who</a></li>
+                                    <a href="https://doj.gov.in/whos-who/" tabindex="-1">Who's Who</a></li>
                                 <li id="menu-item-12447"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12447 has-sub-child">
                                     <a href="https://doj.gov.in/monthly-achievements-month-wise/" tabindex="-1">Monthly
                                         Achievements</a></li>
                                 <li id="menu-item-11793"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11793 has-sub-child">
-                                    <a href="https://doj.gov.in/citizens-charter/" tabindex="-1">Citizens’ Charter</a>
+                                    <a href="https://doj.gov.in/citizens-charter/" tabindex="-1">Citizens' Charter</a>
                                 </li>
                                 <li id="menu-item-7097"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7097 has-sub-child">
@@ -2387,7 +2490,7 @@
                                                         </div>
                                                         <div class="MinisterProfile">
                                                             <span class="Pname">Shri Arjun Ram Meghwal</span>
-                                                            <span class="Pdesg">Hon’ble Minister of State, Ministry of
+                                                            <span class="Pdesg">Hon'ble Minister of State, Ministry of
                                                                 Law and Justice (Independent Charge)</span>
                                                             <ul>
                                                                 <li><a href="https://mpa.gov.in/about-us/meet-the-ministers-or-secretary/ministers/shri-arjun-ram-meghawal"
@@ -2809,7 +2912,7 @@
                                                                         frameborder="0" allowtransparency="true"
                                                                         allowfullscreen="true" class=""
                                                                         title="Twitter Timeline"
-                                                                        src="https://syndication.twitter.com/srv/timeline-profile/screen-name/MLJ_GoI?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOltdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9iYWNrZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19yZWZzcmNfc2Vzc2lvbiI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfZm9zbnJfc29mdF9pbnRlcnZlbnRpb25zX2VuYWJsZWQiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X21peGVkX21lZGlhXzE1ODk3Ijp7ImJ1Y2tldCI6InRyZWF0bWVudCIsInZlcnNpb24iOm51bGx9LCJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3Nob3dfYmlyZHdhdGNoX3Bpdm90c19lbmFibGVkIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19kdXBsaWNhdGVfc2NyaWJlc190b19zZXR0aW5ncyI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdXNlX3Byb2ZpbGVfaW1hZ2Vfc2hhcGVfZW5hYmxlZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdmlkZW9faGxzX2R5bmFtaWNfbWFuaWZlc3RzXzE1MDgyIjp7ImJ1Y2tldCI6InRydWVfYml0cmF0ZSIsInZlcnNpb24iOm51bGx9LCJ0ZndfbGVnYWN5X3RpbWVsaW5lX3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9mcm9udGVuZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9fQ%3D%3D&amp;frame=false&amp;hideBorder=false&amp;hideFooter=false&amp;hideHeader=false&amp;hideScrollBar=false&amp;lang=en&amp;limit=3&amp;maxHeight=400px&amp;origin=https%3A%2F%2Fdoj.gov.in%2F&amp;sessionId=2e86942570a9bd052ebc94ba0c0cb96f043d94bf&amp;showHeader=true&amp;showReplies=false&amp;theme=dark&amp;transparent=false&amp;widgetsVersion=aaf4084522e3a%3A1674595607486"
+                                                                        src="https://syndication.twitter.com/srv/timeline-profile/screen-name/MLJ_GoI?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOltdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9iYWNrZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19yZWZzcmNfc2Vzc2lvbiI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfZm9zbnJfc29mdF9pbnRlcnZlbnRpb25zX2VuYWJsZWQiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X21peGVkX21lZGlhXzE1ODk3Ijp7ImJ1Y2tldCI6InRyZWF0bWVudCIsInZlcnNpb24iOm51bGx9LCJ0ZndfdXNlX3Byb2ZpbGVfaW1hZ2Vfc2hhcGVfZW5hYmxlZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdmlkZW9faGxzX2R5bmFtaWNfbWFuaWZlc3RzXzE1MDgyIjp7ImJ1Y2tldCI6InRydWVfYml0cmF0ZSIsInZlcnNpb24iOm51bGx9LCJ0ZndfbGVnYWN5X3RpbWVsaW5lX3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9mcm9udGVuZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9fQ%3D%3D&amp;frame=false&amp;hideBorder=false&amp;hideFooter=false&amp;hideHeader=false&amp;hideScrollBar=false&amp;lang=en&amp;limit=3&amp;maxHeight=400px&amp;origin=https%3A%2F%2Fdoj.gov.in%2F&amp;sessionId=2e86942570a9bd052ebc94ba0c0cb96f043d94bf&amp;showHeader=true&amp;showReplies=false&amp;theme=dark&amp;transparent=false&amp;widgetsVersion=aaf4084522e3a%3A1674595607486"
                                                                         style="position: static; visibility: visible; width: 280px; height: 400px; display: block; flex-grow: 1;"></iframe>
                                                                 </div>
                                                             </div>
@@ -3070,6 +3173,226 @@
                                                                         rel="noopener noreferrer" target="_blank">
                                                                         <img decoding="async"
                                                                             src="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/bfi_thumb/202411012143464040-qweqd7xjdm4ywa1micpy0aoc9we5jgo6yhzxmau2zo.jpeg"
+                                                                            alt="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
+                                                                            draggable="false">
+                                                                    </a>
+                                                                    <div class="hide fancySocial clearfix">
+                                                                        <div class="socialBox">
+                                                                            <ul>
+                                                                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://doj.gov.in/&amp;t=special-swachhata-campaign-4.0-%282nd---31st-october-2024%29"
+                                                                                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                                                                        target="_blank"
+                                                                                        aria-label="Share on Facebook - opens a new window"
+                                                                                        title="Share on Facebook"
+                                                                                        rel="noopener noreferrer"><span
+                                                                                            class="icon-facebook"></span></a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://twitter.com/share?url=https://doj.gov.in/&amp;via=TWITTER_HANDLE&amp;text=special-swachhata-campaign-4.0-%282nd---31st-october-2024%29"
+                                                                                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                                                                        target="_blank"
+                                                                                        aria-label="Share on Twitter - opens a new window"
+                                                                                        title="Share on Twitter"
+                                                                                        rel="noopener noreferrer"><img
+                                                                                            decoding="async"
+                                                                                            class="icon-twitter"
+                                                                                            aria-hidden="true"
+                                                                                            src="https://doj.gov.in/wp-content/themes/sdo-theme/images/twitter_icon.svg"
+                                                                                            alt="Twitter Icon"
+                                                                                            draggable="false"></a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+
+                                                            <li class="fancyShare"
+                                                                style="width: 350px; margin-right: 0px; float: left; display: block;">
+                                                                <div class="galleryThumb ">
+                                                                    <a href="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/2024/11/20241101117270306-1024x682.jpeg"
+                                                                        class="fancybox"
+                                                                        title="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
+                                                                        rel="noopener noreferrer" target="_blank">
+                                                                        <img decoding="async"
+                                                                            src="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/bfi_thumb/20241101117270306-qweqd61uzy2e924ctbwovb5f34nf42gqa8oynqwvc4.jpeg"
+                                                                            alt="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
+                                                                            draggable="false">
+                                                                    </a>
+                                                                    <div class="hide fancySocial clearfix">
+                                                                        <div class="socialBox">
+                                                                            <ul>
+                                                                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://doj.gov.in/&amp;t=special-swachhata-campaign-4.0-%282nd---31st-october-2024%29"
+                                                                                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                                                                        target="_blank"
+                                                                                        aria-label="Share on Facebook - opens a new window"
+                                                                                        title="Share on Facebook"
+                                                                                        rel="noopener noreferrer"><span
+                                                                                            class="icon-facebook"></span></a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://twitter.com/share?url=https://doj.gov.in/&amp;via=TWITTER_HANDLE&amp;text=special-swachhata-campaign-4.0-%282nd---31st-october-2024%29"
+                                                                                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                                                                        target="_blank"
+                                                                                        aria-label="Share on Twitter - opens a new window"
+                                                                                        title="Share on Twitter"
+                                                                                        rel="noopener noreferrer"><img
+                                                                                            decoding="async"
+                                                                                            class="icon-twitter"
+                                                                                            aria-hidden="true"
+                                                                                            src="https://doj.gov.in/wp-content/themes/sdo-theme/images/twitter_icon.svg"
+                                                                                            alt="Twitter Icon"
+                                                                                            draggable="false"></a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+
+                                                            <li class="fancyShare"
+                                                                style="width: 350px; margin-right: 0px; float: left; display: block;">
+                                                                <div class="galleryThumb ">
+                                                                    <a href="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/2024/11/202411011268038880-1024x682.jpeg"
+                                                                        class="fancybox"
+                                                                        title="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
+                                                                        rel="noopener noreferrer" target="_blank">
+                                                                        <img decoding="async"
+                                                                            src="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/bfi_thumb/202411011268038880-qweqd540t413xg5pyti2atdyhqs1wdczy41h6gy9ic.jpeg"
+                                                                            alt="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
+                                                                            draggable="false">
+                                                                    </a>
+                                                                    <div class="hide fancySocial clearfix">
+                                                                        <div class="socialBox">
+                                                                            <ul>
+                                                                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://doj.gov.in/&amp;t=special-swachhata-campaign-4.0-%282nd---31st-october-2024%29"
+                                                                                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                                                                        target="_blank"
+                                                                                        aria-label="Share on Facebook - opens a new window"
+                                                                                        title="Share on Facebook"
+                                                                                        rel="noopener noreferrer"><span
+                                                                                            class="icon-facebook"></span></a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://twitter.com/share?url=https://doj.gov.in/&amp;via=TWITTER_HANDLE&amp;text=special-swachhata-campaign-4.0-%282nd---31st-october-2024%29"
+                                                                                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                                                                        target="_blank"
+                                                                                        aria-label="Share on Twitter - opens a new window"
+                                                                                        title="Share on Twitter"
+                                                                                        rel="noopener noreferrer"><img
+                                                                                            decoding="async"
+                                                                                            class="icon-twitter"
+                                                                                            aria-hidden="true"
+                                                                                            src="https://doj.gov.in/wp-content/themes/sdo-theme/images/twitter_icon.svg"
+                                                                                            alt="Twitter Icon"
+                                                                                            draggable="false"></a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+
+                                                            <li class="fancyShare"
+                                                                style="width: 350px; margin-right: 0px; float: left; display: block;">
+                                                                <div class="galleryThumb ">
+                                                                    <a href="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/2024/11/20241101236274703-1024x682.jpeg"
+                                                                        class="fancybox"
+                                                                        title="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
+                                                                        rel="noopener noreferrer" target="_blank">
+                                                                        <img decoding="async"
+                                                                            src="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/bfi_thumb/20241101236274703-qweqd38cffyja88g9sot5tv1az1bgz5j9uqi7x11us.jpeg"
+                                                                            alt="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
+                                                                            draggable="false">
+                                                                    </a>
+                                                                    <div class="hide fancySocial clearfix">
+                                                                        <div class="socialBox">
+                                                                            <ul>
+                                                                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://doj.gov.in/&amp;t=special-swachhata-campaign-4.0-%282nd---31st-october-2024%29"
+                                                                                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                                                                        target="_blank"
+                                                                                        aria-label="Share on Facebook - opens a new window"
+                                                                                        title="Share on Facebook"
+                                                                                        rel="noopener noreferrer"><span
+                                                                                            class="icon-facebook"></span></a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://twitter.com/share?url=https://doj.gov.in/&amp;via=TWITTER_HANDLE&amp;text=special-swachhata-campaign-4.0-%282nd---31st-october-2024%29"
+                                                                                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                                                                        target="_blank"
+                                                                                        aria-label="Share on Twitter - opens a new window"
+                                                                                        title="Share on Twitter"
+                                                                                        rel="noopener noreferrer"><img
+                                                                                            decoding="async"
+                                                                                            class="icon-twitter"
+                                                                                            aria-hidden="true"
+                                                                                            src="https://doj.gov.in/wp-content/themes/sdo-theme/images/twitter_icon.svg"
+                                                                                            alt="Twitter Icon"
+                                                                                            draggable="false"></a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+
+                                                            <li class="fancyShare"
+                                                                style="width: 350px; margin-right: 0px; float: left; display: block;">
+                                                                <div class="galleryThumb ">
+                                                                    <a href="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/2024/11/202411011187925758-1024x682.jpeg"
+                                                                        class="fancybox"
+                                                                        title="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
+                                                                        rel="noopener noreferrer" target="_blank">
+                                                                        <img decoding="async"
+                                                                            src="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/bfi_thumb/202411011187925758-qweqd1co1rvyn0b6krvk0uc447al1ky2llfj9d3u78.jpeg"
+                                                                            alt="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
+                                                                            draggable="false">
+                                                                    </a>
+                                                                    <div class="hide fancySocial clearfix">
+                                                                        <div class="socialBox">
+                                                                            <ul>
+                                                                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://doj.gov.in/&amp;t=special-swachhata-campaign-4.0-%282nd---31st-october-2024%29"
+                                                                                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                                                                        target="_blank"
+                                                                                        aria-label="Share on Facebook - opens a new window"
+                                                                                        title="Share on Facebook"
+                                                                                        rel="noopener noreferrer"><span
+                                                                                            class="icon-facebook"></span></a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="https://twitter.com/share?url=https://doj.gov.in/&amp;via=TWITTER_HANDLE&amp;text=special-swachhata-campaign-4.0-%282nd---31st-october-2024%29"
+                                                                                        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                                                                        target="_blank"
+                                                                                        aria-label="Share on Twitter - opens a new window"
+                                                                                        title="Share on Twitter"
+                                                                                        rel="noopener noreferrer"><img
+                                                                                            decoding="async"
+                                                                                            class="icon-twitter"
+                                                                                            aria-hidden="true"
+                                                                                            src="https://doj.gov.in/wp-content/themes/sdo-theme/images/twitter_icon.svg"
+                                                                                            alt="Twitter Icon"
+                                                                                            draggable="false"></a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </li>
+
+                                                            <li class="fancyShare"
+                                                                style="width: 350px; margin-right: 0px; float: left; display: block;">
+                                                                <div class="galleryThumb ">
+                                                                    <a href="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/2024/11/202411011268038880-1024x682.jpeg"
+                                                                        class="fancybox"
+                                                                        title="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
+                                                                        rel="noopener noreferrer" target="_blank">
+                                                                        <img decoding="async"
+                                                                            src="https://cdnbbsr.s3waas.gov.in/s35d6646aad9bcc0be55b2c82f69750387/uploads/bfi_thumb/202411011268038880-qweqd540t413xg5pyti2atdyhqs1wdczy41h6gy9ic.jpeg"
                                                                             alt="Special Swachhata Campaign 4.0 (2nd - 31st October 2024)"
                                                                             draggable="false">
                                                                     </a>
@@ -3721,6 +4044,174 @@
     
     </script>
         
-</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+    <!-- Improved chatbot integration -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+        intent="WELCOME"
+        chat-title="DOJ Legal Assistant"
+        agent-id="ebd7e58e-e018-4abb-bd19-c502b4e7f7aa"
+        language-code="en"
+        wait-open="true"
+        expand="true"
+        chat-icon="https://doj.gov.in/wp-content/themes/sdo-theme/images/emblem.svg"
+    ></df-messenger>
 
+    <!-- Custom chat button -->
+    <div class="chat-button" onclick="openChat()" role="button" tabindex="0" aria-label="Open legal assistant chat">
+        Need Legal Help?
+    </div>
+
+    <!-- Chat functionality -->
+    <script>
+        function openChat() {
+            const dfMessenger = document.querySelector('df-messenger');
+            dfMessenger.setAttribute('expand', 'true');
+        }
+
+        // Error handling for chat
+        window.addEventListener('df-messenger-error', function(event) {
+            console.error('Chatbot error:', event.detail.error);
+        });
+
+        // Chat loaded successfully
+        window.addEventListener('df-messenger-loaded', function(event) {
+            console.log('Chatbot loaded successfully');
+        });
+
+        // Handle messages
+        window.addEventListener('df-message-sent', function(event) {
+            console.log('Message sent:', event.detail.message);
+        });
+
+        // Accessibility improvements
+        document.querySelector('.chat-button').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                openChat();
+            }
+        });
+    </script>
+
+    <!-- Loading performance optimization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Defer non-critical resources
+            const deferredImages = document.querySelectorAll('img[data-src]');
+            deferredImages.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        });
+    </script>
+
+    <!-- Voice Input Button -->
+    <div class="voice-input-button" onclick="toggleVoiceInput()" role="button" tabindex="0" 
+         aria-label="Toggle voice input">
+        <i class="fa fa-microphone" aria-hidden="true"></i>
+        <span class="voice-input-tooltip">Click to start voice input</span>
+    </div>
+
+    <!-- Voice Input Scripts -->
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+        let isRecording = false;
+
+        async function toggleVoiceInput() {
+            const voiceButton = document.querySelector('.voice-input-button');
+            
+            if (!isRecording) {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    voiceButton.classList.add('recording');
+                    
+                    mediaRecorder = new MediaRecorder(stream);
+                    audioChunks = [];
+
+                    mediaRecorder.ondataavailable = (event) => {
+                        audioChunks.push(event.data);
+                    };
+
+                    mediaRecorder.onstop = async () => {
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        await sendAudioToServer(audioBlob);
+                        voiceButton.classList.remove('recording');
+                    };
+
+                    mediaRecorder.start();
+                    isRecording = true;
+                    
+                    // Auto-stop after 10 seconds
+                    setTimeout(() => {
+                        if (isRecording) {
+                            stopRecording();
+                        }
+                    }, 10000);
+
+                } catch (err) {
+                    console.error('Error accessing microphone:', err);
+                    alert('Unable to access microphone. Please check your permissions.');
+                }
+            } else {
+                stopRecording();
+            }
+        }
+
+        function stopRecording() {
+            if (mediaRecorder && isRecording) {
+                mediaRecorder.stop();
+                isRecording = false;
+                mediaRecorder.stream.getTracks().forEach(track => track.stop());
+            }
+        }
+
+        async function sendAudioToServer(audioBlob) {
+            try {
+                const formData = new FormData();
+                formData.append('audio_file', audioBlob);
+
+                const response = await fetch('/transcribe-audio', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Send transcribed text to chatbot
+                    const dfMessenger = document.querySelector('df-messenger');
+                    dfMessenger.setAttribute('expand', 'true');
+                    
+                    // Simulate user input in the chatbot
+                    const event = new CustomEvent('df-text-message', {
+                        detail: { message: result.text }
+                    });
+                    dfMessenger.dispatchEvent(event);
+                } else {
+                    console.error('Transcription failed:', result.error);
+                    alert('Sorry, I couldn\'t understand that. Please try again.');
+                }
+
+            } catch (err) {
+                console.error('Error sending audio to server:', err);
+                alert('Error processing voice input. Please try again.');
+            }
+        }
+
+        // Add keyboard support for voice input
+        document.querySelector('.voice-input-button').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                toggleVoiceInput();
+            }
+        });
+
+        // Stop recording if page is hidden
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && isRecording) {
+                stopRecording();
+            }
+        });
+    </script>
+
+    <!-- Add Font Awesome for microphone icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
 </html>
